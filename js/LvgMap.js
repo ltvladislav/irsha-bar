@@ -56,7 +56,7 @@ class LvgMap {
 				};
 				let centerDestination = {
 					lat: scope.centerMarker.position.lat(),
-					lng: scope.centerMarker.position.lat()
+					lng: scope.centerMarker.position.lng()
 				};
 				let renderer = scope.directionsRenderer;
 
