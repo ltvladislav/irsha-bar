@@ -53,13 +53,13 @@ class LvgMap {
 			
 			let renderer = this.directionsRenderer;
 			
-			let position = {
+			let positionCoords = {
 				lat: position.coords.latitude,
 				lng: position.coords.longitude
 			};
 			
 			this.directionsService.route({
-				origin: position,
+				origin: positionCoords,
 				destination: this.centerMakerCoords,
 				travelMode: google.maps.DirectionsTravelMode.DRIVING
 			},
