@@ -33,6 +33,13 @@ class LvgMap {
 		}
 	}
 	
+	get centerMakerCoords() {
+		return {
+			lat: this.centerMarker.position.lat(),
+			lng: this.centerMarker.position.lng()
+		};
+	}
+	
 	makeRoute() {
 		if (!this.directionsService) {
 			this.directionsService = new google.maps.DirectionsService();
@@ -41,37 +48,36 @@ class LvgMap {
 			this.directionsRenderer = new google.maps.DirectionsRenderer();
 			this.directionsRenderer.setMap(this.map);
 		}
-		let infoWindow = new google.maps.InfoWindow;
 		
-		
+		this.getCurrentPosition(function(position) {
+			
+			let renderer = this.directionsRenderer;
+			
+			let position = {
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+			};
+			
+			this.directionsService.route({
+				origin: position,
+				destination: this.centerMakerCoords,
+				travelMode: google.maps.DirectionsTravelMode.DRIVING
+			},
+			function(response, status) {
+				if (status === google.maps.DirectionsStatus.OK) {
+					renderer.setDirections(response);
+				} else {
+					window.alert('Directions request failed due to ' + status);
+				}
+			});
+			
+		}, this);
+	}
+	
+	getCurrentPosition(callback, scope) {
 		if (navigator.geolocation) {
-			
-			let scope = this;
-			
 			navigator.geolocation.getCurrentPosition(function(position) {
-
-				let destination = {
-					lat: position.coords.latitude,
-					lng: position.coords.longitude
-				};
-				let centerDestination = {
-					lat: scope.centerMarker.position.lat(),
-					lng: scope.centerMarker.position.lng()
-				};
-				let renderer = scope.directionsRenderer;
-
-				scope.directionsService.route({
-						origin: centerDestination,
-						destination: destination,
-						travelMode: "DRIVING"
-					},
-					function(response, status) {
-						if (status === 'OK') {
-							renderer.setDirections(response);
-						} else {
-							window.alert('Directions request failed due to ' + status);
-						}
-					});
+				callback.call(scope, position);
 			}, function() {});
 		} else {
 			window.console.log('Browser doesn\'t support Geolocation')

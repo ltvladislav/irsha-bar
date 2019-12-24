@@ -158,12 +158,3 @@
     <script src="js/main.js" ></script>
 </body>
 </html>
-
-<?php
-session_start();
-	
-if(!empty($_SESSION['ErrorMessage'])) {
-	echo "<script>alert(\"" . $_SESSION['ErrorMessage'] . "\");</script>";
-	$_SESSION['ErrorMessage'] = "";
-}
-?>
