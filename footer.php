@@ -42,90 +42,10 @@
 					e.preventDefault();
 					window.footerMap.makeRoute();
 				});
+				//AIzaSyCpGlb7OvqiPwCftfQpJY3MMvO_CNQuMmo
 			}
-			/*function calculateAndDisplayRoute(directionsService, directionsRenderer, map) {
-
-				let pos = { lat: 50.388667, lng: 30.518540};
-				let destination;
-				let modeSelect = document.getElementById('mode');
-				if (document.querySelector('#location').checked) {
-					infoWindow = new google.maps.InfoWindow;
-
-					if (navigator.geolocation) {
-						navigator.geolocation.getCurrentPosition(function(position) {
-
-							destination = {
-								lat: position.coords.latitude,
-								lng: position.coords.longitude
-							};
-
-							directionsService.route({
-									origin: pos,
-									destination: destination ,
-									travelMode: "DRIVING"
-								},
-								function(response, status) {
-									if (status === 'OK') {
-										directionsRenderer.setDirections(response);
-									} else {
-										window.alert('Directions request failed due to ' + status);
-									}
-								});
-						}, function() {
-						});
-					} else {
-						// Browser doesn't support Geolocation
-						console.log('Browser doesn\'t support Geolocation')
-						alert('Browser doesn\'t support Geolocation')
-					}
-
-				} else {
-					directionsService.route(
-						{
-							origin: pos,
-							destination:  document.querySelector('#destination').value,
-							travelMode: modeSelect[modeSelect.selectedIndex].value
-						},
-						function(response, status) {
-							if (status === 'OK') {
-								directionsRenderer.setDirections(response);
-							} else {
-								window.alert('Directions request failed due to ' + status);
-							}
-						});
-				}
-			}
-
-
-			function initMap() {
-				let directionsService = new google.maps.DirectionsService();
-				let directionsRenderer = new google.maps.DirectionsRenderer();
-				let pos = { lat: 50.388667, lng: 30.518540};
-
-				let opt = {
-					center: pos ,
-					zoom: 15
-				};
-
-				let myMap = new google.maps.Map(document.getElementById("map"), opt);
-
-
-				let marker = new google.maps.Marker({
-					position: pos,
-					map: myMap,
-					title: 'Hello World!'
-				});
-
-				directionsRenderer.setMap(myMap);
-
-				let onChangeHandler = function() {
-					calculateAndDisplayRoute(directionsService, directionsRenderer, myMap);
-				};
-
-				document.querySelector('.makeRoad').addEventListener('click', onChangeHandler );
-			}*/
 		</script>
-		<script asynch defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGlb7OvqiPwCftfQpJY3MMvO_CNQuMmo&callback=initMap"
+		<script asynch defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8nsIrrDrC7Ww9iV_QwLL3-itWVrRUmyU&callback=initMap"
 			type="text/javascript"></script>
 		
 	</div>
