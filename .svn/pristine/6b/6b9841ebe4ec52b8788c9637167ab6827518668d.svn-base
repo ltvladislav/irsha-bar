@@ -1,0 +1,14 @@
+<?
+
+class Connection {
+	public static $host = 'mysql.zzz.com.ua'; // адрес сервера 
+	public static $database = 'livlag'; // имя базы данных
+	public static $user = 'livlag1dbu'; // имя пользователя
+	public static $password = 'Livlag2208'; // пароль
+
+	public static function getConnection() {		
+		return new mysqli(self::$host, self::$user, self::$password, self::$database);
+	}
+}
+
+?>

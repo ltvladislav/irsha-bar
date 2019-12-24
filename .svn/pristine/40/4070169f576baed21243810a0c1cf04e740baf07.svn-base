@@ -1,0 +1,16 @@
+<footer id="contacts">
+	<div class="container">
+		<div class="footer-col1">
+			<h1>IRSHA BAR</h1>
+			<p>НЕ ЗНАЄШ ДЕ ВІДПОЧИТИ, ТА ЯК ГАРНО ПРОВЕСТИ ЧАС, ТОДІ ТОБІ ДО НАС</p>
+		</div>
+		<div class="footer-col2">
+			<h4>Чекаємо вас</h4>
+			<p>c. Ірша, Житомирська область, Україна</p>
+			<p>+38 097 376 5417</p>
+			<p>barmen@irshabar.kl.com.ua</p>
+			<p>Ми відкриті з 20:00 що п'ятниці та що суботи</p>
+			<p>Працюємо на замовлення (деталі за телефоном)</p>
+		</div>
+	</div>
+</footer>
