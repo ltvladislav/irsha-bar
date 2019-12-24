@@ -128,18 +128,18 @@
 				
 				window.footerMap = new LvgMap({
 					containerId: "map",
-					center: {
+					center: { lat: 50.388667, lng: 30.518540}/*{
 						lat: 50.7220111, 
 						lng: 29.4550095
-					},
-					centerTitle: "Бар",
+					}*/,
+					centerTitle: "Бар"/*,
 					markers: [
 						{
 							lat: 50.7215857, 
 							lng: 29.4534646,
 							title: "Магазин"
 						}
-					]
+					]*/
 				});
 				document.querySelector('.makeRoad').addEventListener('click', function(e) {
 					e.preventDefault();
@@ -147,7 +147,7 @@
 				});
 			}
 		</script>
-		<script asynch defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8nsIrrDrC7Ww9iV_QwLL3-itWVrRUmyU&callback=initMap"
+		<script asynch defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGlb7OvqiPwCftfQpJY3MMvO_CNQuMmo&callback=initMap"
 			type="text/javascript"></script>
 		
 	</div>
