@@ -42,8 +42,12 @@ class LvgMap {
 			this.directionsRenderer.setMap(this.map);
 		}
 		let infoWindow = new google.maps.InfoWindow;
-
+		
+		
 		if (navigator.geolocation) {
+			
+			let scope = this;
+			
 			navigator.geolocation.getCurrentPosition(function(position) {
 
 				let destination = {
@@ -51,12 +55,12 @@ class LvgMap {
 					lng: position.coords.longitude
 				};
 				let centerDestination = {
-					lat: this.centerMarker.position.lat(),
-					lng: this.centerMarker.position.lat()
+					lat: scope.centerMarker.position.lat(),
+					lng: scope.centerMarker.position.lat()
 				};
-				let renderer = this.directionsRenderer;
+				let renderer = scope.directionsRenderer;
 
-				this.directionsService.route({
+				scope.directionsService.route({
 						origin: centerDestination,
 						destination: destination,
 						travelMode: "DRIVING"
